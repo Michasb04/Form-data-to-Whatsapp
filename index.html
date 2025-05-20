@@ -3,56 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Form data to Whastapp</title>
 </head>
 <body>
-    <form action="">
+
+    <div class="background"></div>
+
+    <form onsubmit="sendMessage(event)">
+
         <div class="form-tittle">
             <h1>¡Contáctanos!</h1>
         </div>
+
         <label for="">Nombre:</label>
-        <input type="text" class="name" required><br>
+        <input type="text" class="name" placeholder="Ingrese su nombre" required><br>
 
         <label for="">Email:</label>
-        <input type="email" class="email" required><br>
+        <input type="email" class="email" placeholder="example@gmail.com" required><br>
 
         <label for="">Mensaje:</label>
-        <textarea name="textarea" class="message"></textarea>
-        <button onclick="sendMessage()" class="btn" id="sendForm" >Enviar</button>
+        <textarea name="textarea" placeholder="Hola,quería tener mas información..."  class="message"></textarea>
+
+        <button type="submit" class="btn" id="sendForm" >Enviar</button>
+
     </form>
-
-    <script>
-        
-        function sendMessage(){
-
-            let phoneNumber = "+573212948732"
-
-            let name = document.querySelector(".name").value;
-    
-            let email = document.querySelector(".email").value;
-    
-            let messageText = document.querySelector(".message").value;
-    
-            
-            let URL = "https://wa.me/" + phoneNumber + "?text="
-             + "Nombre :" + name + "%0a"
-             + "Email :" + email + "%0a"
-             + "Mensaje :" + messageText + "%0a";
-
-             if(document.querySelector(".name").value === ""){
-                alert("Por favor ingrese su nombre")
-             }
-
-             else if( document.querySelector(".email").value === ""){
-                alert("Por favor ingrese su correo")
-             }
-             else{
-                 
-                 window.open(URL,"_blank").focus();
-             }
-        
-        }
-    </script>
+    <script src="./js/sendMessage.js"></script>
 </body>
 </html>
