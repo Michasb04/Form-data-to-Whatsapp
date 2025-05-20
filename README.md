@@ -36,6 +36,7 @@ Este proyecto es un formulario web de contacto que permite a los usuarios enviar
 2. Reemplaza el número de WhatsApp en `sendMessage.js` por el tuyo:
    ```js
    let phoneNumber = "+573212948732";
+3. Abre index.html en tu navegador.
 
 ![image](https://github.com/user-attachments/assets/cccad54d-5978-4d4d-a479-4068f9176bb5)
 
