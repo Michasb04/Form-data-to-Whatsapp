@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Form data to Whastapp</title>
+</head>
+<body>
+    <form action="">
+        <div class="form-tittle">
+            <h1>¡Contáctanos!</h1>
+        </div>
+        <label for="">Nombre:</label>
+        <input type="text" class="name" required><br>
+
+        <label for="">Email:</label>
+        <input type="email" class="email" required><br>
+
+        <label for="">Mensaje:</label>
+        <textarea name="textarea" class="message"></textarea>
+        <button onclick="sendMessage()" class="btn" id="sendForm" >Enviar</button>
+    </form>
+
+    <script>
+        
+        function sendMessage(){
+            let phoneNumber = "+573004803498"
+
+            let name = document.querySelector(".name").value;
+    
+            let email = document.querySelector(".email").value;
+    
+            let messageText = document.querySelector(".message").value;
+    
+            
+            let URL = "https://wa.me/" + phoneNumber + "?text="
+             + "Nombre :" + name + "%0a"
+             + "Email :" + email + "%0a"
+             + "Mensaje :" + messageText + "%0a";
+
+             if(name = " "){
+                alert = "Datos incompletos"
+             }
+        
+        window.open(URL,"_blank").focus();
+        }
+    </script>
+</body>
+</html>
